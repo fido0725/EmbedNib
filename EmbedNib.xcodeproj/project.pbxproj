@@ -14,6 +14,8 @@
 		5F6361731B68BF39001C7169 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5F6361721B68BF39001C7169 /* Images.xcassets */; };
 		5F6361761B68BF39001C7169 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5F6361741B68BF39001C7169 /* LaunchScreen.xib */; };
 		5F6361821B68BF3A001C7169 /* EmbedNibTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F6361811B68BF3A001C7169 /* EmbedNibTests.m */; };
+		5F63618D1B68BF6B001C7169 /* EmbedView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F63618C1B68BF6B001C7169 /* EmbedView.m */; };
+		5F63618F1B68BF80001C7169 /* EmbedView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5F63618E1B68BF80001C7169 /* EmbedView.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,6 +42,9 @@
 		5F63617B1B68BF39001C7169 /* EmbedNibTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = EmbedNibTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		5F6361801B68BF3A001C7169 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5F6361811B68BF3A001C7169 /* EmbedNibTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EmbedNibTests.m; sourceTree = "<group>"; };
+		5F63618B1B68BF6B001C7169 /* EmbedView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EmbedView.h; sourceTree = "<group>"; };
+		5F63618C1B68BF6B001C7169 /* EmbedView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EmbedView.m; sourceTree = "<group>"; };
+		5F63618E1B68BF80001C7169 /* EmbedView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = EmbedView.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -86,6 +91,9 @@
 				5F63616C1B68BF39001C7169 /* ViewController.h */,
 				5F63616D1B68BF39001C7169 /* ViewController.m */,
 				5F63616F1B68BF39001C7169 /* Main.storyboard */,
+				5F63618B1B68BF6B001C7169 /* EmbedView.h */,
+				5F63618C1B68BF6B001C7169 /* EmbedView.m */,
+				5F63618E1B68BF80001C7169 /* EmbedView.xib */,
 				5F6361721B68BF39001C7169 /* Images.xcassets */,
 				5F6361741B68BF39001C7169 /* LaunchScreen.xib */,
 				5F6361651B68BF39001C7169 /* Supporting Files */,
@@ -201,6 +209,7 @@
 			files = (
 				5F6361711B68BF39001C7169 /* Main.storyboard in Resources */,
 				5F6361761B68BF39001C7169 /* LaunchScreen.xib in Resources */,
+				5F63618F1B68BF80001C7169 /* EmbedView.xib in Resources */,
 				5F6361731B68BF39001C7169 /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -221,6 +230,7 @@
 			files = (
 				5F63616E1B68BF39001C7169 /* ViewController.m in Sources */,
 				5F63616B1B68BF39001C7169 /* AppDelegate.m in Sources */,
+				5F63618D1B68BF6B001C7169 /* EmbedView.m in Sources */,
 				5F6361681B68BF39001C7169 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
