@@ -10,35 +10,52 @@
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="ViewController" sceneMemberID="viewController">
                     <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
-                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                        <viewControllerLayoutGuide type="top" id="rWe-eA-AZE"/>
+                        <viewControllerLayoutGuide type="bottom" id="cnU-09-gBw"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dV4-Ir-qKM" customClass="EmbedView">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dV4-Ir-qKM" userLabel="normalEmbedView" customClass="EmbedView">
                                 <rect key="frame" x="0.0" y="70" width="320" height="50"/>
                                 <color key="backgroundColor" red="0.85490196080000003" green="0.85490196080000003" blue="0.85490196080000003" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="50" id="AO3-c3-1MK"/>
+                                    <constraint firstAttribute="height" constant="50" id="CnF-dx-BFD"/>
+                                </constraints>
+                            </view>
+                            <view tag="1" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lzg-pE-7bl" userLabel="scrollEmbedView" customClass="EmbedView">
+                                <rect key="frame" x="0.0" y="178" width="320" height="50"/>
+                                <color key="backgroundColor" red="0.85490196080000003" green="0.85490196080000003" blue="0.85490196080000003" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="gLS-wz-8HE"/>
+                                </constraints>
+                            </view>
+                            <view tag="1" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hEp-oc-HyG" userLabel="OwnerEmbedView" customClass="OwnerEmbedView">
+                                <rect key="frame" x="0.0" y="268" width="320" height="50"/>
+                                <color key="backgroundColor" red="0.85490196080000003" green="0.85490196080000003" blue="0.85490196080000003" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="aRu-C4-Exs"/>
                                 </constraints>
                             </view>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstAttribute="trailingMargin" secondItem="dV4-Ir-qKM" secondAttribute="trailing" constant="-16" id="3ls-g4-br5"/>
-                            <constraint firstItem="dV4-Ir-qKM" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="-16" id="PHz-f6-YvN"/>
-                            <constraint firstItem="dV4-Ir-qKM" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="50" id="tTZ-4D-LTP"/>
+                            <constraint firstItem="lzg-pE-7bl" firstAttribute="top" secondItem="dV4-Ir-qKM" secondAttribute="bottom" constant="58" id="2hd-8m-Jbv"/>
+                            <constraint firstItem="hEp-oc-HyG" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="-16" id="2v1-UM-fyi"/>
+                            <constraint firstItem="hEp-oc-HyG" firstAttribute="top" secondItem="lzg-pE-7bl" secondAttribute="bottom" constant="40" id="DwW-2n-CfS"/>
+                            <constraint firstItem="dV4-Ir-qKM" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="-16" id="JwX-SC-5eG"/>
+                            <constraint firstItem="dV4-Ir-qKM" firstAttribute="top" secondItem="rWe-eA-AZE" secondAttribute="bottom" constant="50" id="WCE-fY-tu6"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="dV4-Ir-qKM" secondAttribute="trailing" constant="-16" id="WSX-gb-cxd"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="hEp-oc-HyG" secondAttribute="trailing" constant="-16" id="iaO-XC-ujR"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="lzg-pE-7bl" secondAttribute="trailing" constant="-16" id="nqm-kF-xQ3"/>
+                            <constraint firstItem="lzg-pE-7bl" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="-16" id="zdd-Jb-KVN"/>
                         </constraints>
                     </view>
-                    <connections>
-                        <outlet property="embedview" destination="dV4-Ir-qKM" id="0Jf-ak-MQz"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="152.53333333333333" y="294.41333333333336"/>
+            <point key="canvasLocation" x="302" y="307"/>
         </scene>
     </scenes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">

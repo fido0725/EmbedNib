@@ -10,6 +10,8 @@
 
 @interface AppDelegate ()
 
+@property (strong, nonatomic) IBOutlet UIView *asd;
+
 @end
 
 @implementation AppDelegate

@@ -1,13 +1,13 @@
 //
-//  EmbedView.h
+//  OwnerEmbedView.h
 //  EmbedNib
 //
-//  Created by chenfeng on 15/7/29.
+//  Created by ptx on 15/8/1.
 //  Copyright (c) 2015年 fido0725. All rights reserved.
 //
 
 #import <UIKit/UIKit.h>
 
-@interface EmbedView : UIView
+@interface OwnerEmbedView : UIView
 
 @end

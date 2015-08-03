@@ -6,72 +6,92 @@
 //  Copyright (c) 2015年 fido0725. All rights reserved.
 //
 
+//#define UseCategory
+
 #import "EmbedView.h"
+
+#ifdef UseCategory
+#import "UIView+ReuseNibLoading.h"
+#endif
+
+@interface EmbedView()
+
+@property (nonatomic,strong) IBOutletCollection(UIButton) NSArray *btns;
+
+@end
 
 @implementation EmbedView
 
+///需要替换self为另外一个对象
 -(id)awakeAfterUsingCoder:(NSCoder *)aDecoder
 {
+    
+#ifndef UseCategory
+    ///判断是否占位视图，防止死循环
     if (self.subviews.count==0) {
         
-        EmbedView *other = [[NSBundle mainBundle] loadNibNamed:NSStringFromClass([self class]) owner:nil options:nil][0];
+        EmbedView *other;
+        ///在此以tag切换top_level object
+        if (self.tag>0) {
+            other = [[NSBundle mainBundle] loadNibNamed:NSStringFromClass([self class]) owner:nil options:nil][1];
+        }
+        else
+        {
+            other = [[NSBundle mainBundle] loadNibNamed:NSStringFromClass([self class]) owner:nil options:nil][0];
+        }
+        ///占位视图可视化参数转移
         other.frame = self.frame;
-        //other.autoresizingMask = self.autoresizingMask;
-        [other setTranslatesAutoresizingMaskIntoConstraints:NO];
+        other.autoresizingMask = self.autoresizingMask;
+        other.backgroundColor = self.backgroundColor;
+        other.opaque = self.opaque;
+        other.hidden = self.hidden;
+        other.translatesAutoresizingMaskIntoConstraints = self.translatesAutoresizingMaskIntoConstraints;
+        
+        ///如果存在约束，则转移到other上
+        if (!other.translatesAutoresizingMaskIntoConstraints) {
+            for (NSLayoutConstraint *constraint in self.constraints) {
+            id firstItem = constraint.firstItem == self ? other: constraint.firstItem;
+            id secondItem = constraint.secondItem == self ? other: constraint.secondItem;
+          [other addConstraint:  [NSLayoutConstraint constraintWithItem:firstItem attribute:constraint.firstAttribute relatedBy:constraint.relation toItem:secondItem attribute:constraint.secondAttribute multiplier:constraint.multiplier constant:constraint.constant]];
+        }
+        }
+        else
+        {
+            ///由于此自定义视图采用约束布局，所以必须NO
+            other.translatesAutoresizingMaskIntoConstraints = NO;
+        }
 
         self = other;
     }
+#else
+    self = [self loadReuseViewWithOwner:NO tag:self.tag];
+#endif
     return self;
 }
 
 -(void)awakeFromNib
 {
     [super awakeFromNib];
-    self.layer.borderColor = [[UIColor greenColor] CGColor];
-    self.layer.borderWidth = 0.5;
+    
     for (UIButton *btn in _btns) {
         btn.layer.borderWidth = 0.5;
         btn.layer.borderColor = [[UIColor grayColor] CGColor];
     }
 }
 
-- (instancetype)init
-{
-    self = [super init];
-    if (self) {
-        
-    }
-    return self;
-}
-
-+ (void)initialize
-{
-    if (self == [self class]) {
-        
-    }
-}
-
+///load nib首先发送此消息
 - (instancetype)initWithCoder:(NSCoder *)coder
 {
     self = [super initWithCoder:coder];
     if (self) {
-        
+
     }
     return self;
 }
 
-- (instancetype)initWithFrame:(CGRect)frame
-{
-    self = [super initWithFrame:frame];
-    if (self) {
-        
-    }
-    return self;
-}
+- (IBAction)clickAction:(UIButton*)sender {
 
-
-- (IBAction)clickAction:(id)sender {
-    
+    NSLog(@"click here");
     
 }
 
