@@ -6,6 +6,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="OwnerEmbedView">
             <connections>
+                <outlet property="ownerView" destination="iN0-l3-epB" id="gUP-iS-eyo"/>
                 <outlet property="segment" destination="mDT-Fo-Yee" id="qoH-Lf-Sqb"/>
                 <outlet property="switcher" destination="WZy-4p-fzm" id="p01-ku-f9q"/>
             </connections>
@@ -21,9 +22,15 @@
                         <segment title="First"/>
                         <segment title="Second"/>
                     </segments>
+                    <connections>
+                        <action selector="segmentAction:" destination="-1" eventType="valueChanged" id="5PO-dV-Znz"/>
+                    </connections>
                 </segmentedControl>
                 <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="WZy-4p-fzm">
                     <rect key="frame" x="250" y="11" width="51" height="31"/>
+                    <connections>
+                        <action selector="switchAction:" destination="-1" eventType="valueChanged" id="oXf-I8-Tl1"/>
+                    </connections>
                 </switch>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>

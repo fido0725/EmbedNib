@@ -22,8 +22,6 @@
         ///top_level object
         other = [[NSBundle mainBundle] loadNibNamed:NSStringFromClass([self class]) owner:(owner?self:nil) options:nil][tag];
 
-        if (!owner) {
-            
         other.frame = self.frame;
         other.autoresizingMask = self.autoresizingMask;
         other.backgroundColor = self.backgroundColor;
@@ -39,32 +37,7 @@
                 [other addConstraint:  [NSLayoutConstraint constraintWithItem:firstItem attribute:constraint.firstAttribute relatedBy:constraint.relation toItem:secondItem attribute:constraint.secondAttribute multiplier:constraint.multiplier constant:constraint.constant]];
             }
         }
-        else
-        {
-            other.translatesAutoresizingMaskIntoConstraints = NO;
-        }
             return other;
-        }
-        else
-        {
-                [self addSubview:other];
-                
-                ///constrainst-based
-                if (self.translatesAutoresizingMaskIntoConstraints) {
-                    other.autoresizingMask = UIViewAutoresizingFlexibleWidth|UIViewAutoresizingFlexibleHeight;
-                }
-                else
-                {
-                    NSDictionary *dict = NSDictionaryOfVariableBindings(self,other);
-                    NSArray *arr = [NSLayoutConstraint constraintsWithVisualFormat:@"H:|-(0)-[other]-(0)-|" options:0 metrics:nil views:dict];
-                    [self addConstraints:arr];
-                    
-                    arr= [NSLayoutConstraint constraintsWithVisualFormat:@"V:|-(0)-[other]-(0)-|" options:0 metrics:nil views:dict];
-                    [self addConstraints:arr];
-                }
-            return self;
-        }
-        
     }
     return self;
 }

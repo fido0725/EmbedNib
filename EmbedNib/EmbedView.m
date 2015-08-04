@@ -6,7 +6,7 @@
 //  Copyright (c) 2015年 fido0725. All rights reserved.
 //
 
-//#define UseCategory
+#define UseCategory
 
 #import "EmbedView.h"
 
@@ -55,11 +55,6 @@
           [other addConstraint:  [NSLayoutConstraint constraintWithItem:firstItem attribute:constraint.firstAttribute relatedBy:constraint.relation toItem:secondItem attribute:constraint.secondAttribute multiplier:constraint.multiplier constant:constraint.constant]];
         }
         }
-        else
-        {
-            ///由于此自定义视图采用约束布局，所以必须NO
-            other.translatesAutoresizingMaskIntoConstraints = NO;
-        }
 
         self = other;
     }
@@ -91,7 +86,7 @@
 
 - (IBAction)clickAction:(UIButton*)sender {
 
-    NSLog(@"click here");
+    NSLog(@"click here tag is %d",sender.tag);
     
 }
 
